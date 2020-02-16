@@ -1,0 +1,110 @@
+from curses import WindowObject
+from curses import textpad
+
+version = str
+
+
+class Panel:
+
+    def above():
+        """Returns the panel above the current panel."""
+        return Panel
+
+    def below():
+        """Returns the panel below the current panel."""
+        return Panel
+
+    def bottom():
+        """Push the panel to the bottom of the stack."""
+        pass
+
+    def hidden():
+        """Returns true if the panel is hidden (not visible), false
+        otherwise."""
+        return bool
+
+    def hide():
+        """Hide the panel.
+
+        This does not delete the object, it just makes the window on
+        screen invisible.
+        """
+        pass
+
+    def move(y, x):
+        """Move the panel to the screen coordinates (y, x)."""
+        pass
+
+    def replace(win):
+        """Change the window associated with the panel to the window win."""
+        pass
+
+    def set_userptr(obj):
+        """Set the panel’s user pointer to obj.
+
+        This is used to associate an arbitrary piece of data with the
+        panel, and can be any Python object.
+        """
+        pass
+
+    def show():
+        """Display the panel (which might have been hidden)."""
+        pass
+
+    def top():
+        """Push panel to the top of the stack."""
+        pass
+
+    def userptr():
+        """Returns the user pointer for the panel.
+
+        This might be any Python object.
+        """
+        return object
+
+    def window():
+        """Returns the window object associated with the panel."""
+        return WindowObject
+
+
+class error:
+    """Common base class for all non-exit exceptions."""
+    pass
+
+    args = None
+
+    def with_traceback(*argv, **kwargs):
+        """Exception.with_traceback(tb) -- set self.__traceback__ to tb and
+        return self."""
+        pass
+
+
+def bottom_panel():
+    """Returns the bottom panel in the panel stack."""
+    return Panel
+
+
+def new_panel(win):
+    """Returns a panel object, associating it with the given window win.
+
+    Be aware that you need to keep the returned panel object referenced
+    explicitly. If you don’t, the panel object is garbage collected and
+    removed from the panel stack.
+
+    @type win : WindowObject
+    """
+    return Panel
+
+
+def top_panel():
+    """Returns the top panel in the panel stack."""
+    return Panel
+
+
+def update_panels():
+    """Updates the virtual screen after changes in the panel stack.
+
+    This does not call curses.doupdate(), so you’ll have to do this
+    yourself.
+    """
+    pass
